@@ -60,7 +60,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(entry => `${entry[0]}: ${entry[1]}`);
 };
 
 
@@ -116,7 +116,11 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(character => {
+    if (character.house && !houses.includes(character.house)) {
+      houses.push(character.house);
+    }
+  });
   return houses;
 };
 
