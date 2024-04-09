@@ -30,7 +30,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  const firstLettersArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    firstLettersArray.push(arr[i].substr(0, 1));
+  }
+
+  return firstLettersArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
