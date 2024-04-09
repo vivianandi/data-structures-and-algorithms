@@ -98,7 +98,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(":)") === -1) {
+      return false;
+    }
+  }
+
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
