@@ -157,7 +157,10 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  const shortestCharacter = data.reduce((shortest, current) => {
+    return parseInt(current.height) < parseInt(shortest.height) ? current : shortest;
+  });
+  return shortestCharacter.name;
 };
 
 /* ------------------------------------------------------------------------------------------------
