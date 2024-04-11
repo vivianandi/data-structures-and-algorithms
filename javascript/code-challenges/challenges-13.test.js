@@ -74,7 +74,8 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  const pattern = /w/;
+  return pattern.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +91,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  const pattern = /\d/;
+  return pattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
