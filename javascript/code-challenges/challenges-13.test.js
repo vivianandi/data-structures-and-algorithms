@@ -116,7 +116,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const pattern = /\b[A-Z][a-z]*\b/g;
+  return str.match(pattern) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
