@@ -179,18 +179,30 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  for (let i = 0; i < 3; i++) {
+    if ((board[i][0] !== '' && board[i][0] === board[i][1] && board[i][0] === board[i][2]) ||
+      (board[0][i] !== '' && board[0][i] === board[1][i] && board[0][i] === board[2][i])) {
+      return true;
+    }
+  }
+
+  if ((board[0][0] !== '' && board[0][0] === board[1][1] && board[0][0] === board[2][2]) ||
+    (board[0][2] !== '' && board[0][2] === board[1][1] && board[0][2] === board[2][0])) {
+    return true;
+  }
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenge-14.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
@@ -254,7 +266,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
